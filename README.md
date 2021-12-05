@@ -8,6 +8,7 @@
     <a href="#tecnologias">Tecnologias</a>
 </p>
 
-<div class="objetivo">
+<div id="objetivo">
+    <h2>Objetivo</h2>
     <p>REST API para cadastro de anotações. O usuário poderá logar-se no sistema, bem como realizar cadastro, remoção e editar uma determinada anotação</p>
 </div>
