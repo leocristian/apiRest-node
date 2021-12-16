@@ -1,6 +1,4 @@
-GET http://localhost:8000/notes
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoibGVvbmFyZG8iLCJpYXQiOjE2Mzg2NjA1MjV9.1-jLY2M0LQG8GuBv3rH9jIVvLL_9ra69ksrmCSNSo3I
-
+GET http://localhost:8000/
 ###
 
 POST http://localhost:8000/login
@@ -25,11 +23,13 @@ Content-Type: application/json
 
 ###
 
+GET http://localhost:8000/notes
+
+###
 POST http://localhost:8000/notes
 Content-Type: application/json
 
 {
-    "title": "meu terceiro texto",
-    "message": "aksjflaksfjsdl lasdjflaskdf",
-    "idUser": 1
+    "title": "texssstaaao2",
+    "message": "aksjsafçdflaksfjsdllasdjflaskdf"
 }
