@@ -1,15 +1,15 @@
 const express = require('express')
 const bodyparser = require('body-parser')
-const server = express()
+const app = express()
 const port = 8000
 
 const userRouter = require("./routes/user")
 const noteRouter = require("./routes/note")
 
-server.use(bodyparser.json())
-server.use(bodyparser.urlencoded({ extended: true }))
+app.use(bodyparser.json())
+app.use(bodyparser.urlencoded({ extended: true }))
 
-server.use("/api", userRouter)
-server.use("/api", noteRouter)
+app.use("/api", userRouter)
+app.use("/api", noteRouter)
 
-module.exports = { server, port }
+module.exports = { app, port }

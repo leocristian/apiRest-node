@@ -1,16 +1,17 @@
 const fs = require('fs')
-
+const fileHandle = require("fs/promises")
 const notes = require("../services/database/notes.json")
 
 class NoteController {
     async getAll(req, res) {
-        fs.readFile("notes.json", (err, data) => {
-            if (err) throw err
-    
-            const allNotes = JSON.parse(data)
-    
-            res.json(allNotes)
-        })
+
+        const notes = JSON.parse(await fs.readFileSync("notes.json")) 
+
+        console.log(notes)
+
+        if(notes.length == 0) return res.status(404).send("Notes not found")
+
+        return res.status(200).send(notes)
     }
     async create(req, res) {
 
@@ -18,12 +19,12 @@ class NoteController {
     
         let newNote = { tile: title, message: message }
     
-        notes.push(newNote)
+        await notes.push(newNote)
     
         await fs.writeFile("notes.json", JSON.stringify(notes), err => {
             if (err) throw err; 
     
-            res.send("Nota cadastrada com sucesso!")
+            return res.status(200).send("Nota cadastrada com sucesso!")
         })
     }
 }
