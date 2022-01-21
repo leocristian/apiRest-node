@@ -1,6 +1,6 @@
 
-const { server, port } = require("./app")
+const { app, port } = require("./app")
 
-server.listen(port, () => {
+app.listen(port, () => {
     console.log(`Servidor rodando no endereço https://localhost:${port}`)
 })

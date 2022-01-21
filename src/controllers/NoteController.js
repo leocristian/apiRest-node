@@ -7,7 +7,6 @@ class NoteController {
 
         const notes = JSON.parse(await fs.readFileSync("notes.json")) 
 
-        console.log(notes)
 
         if(notes.length == 0) return res.status(404).send("Notes not found")
 
